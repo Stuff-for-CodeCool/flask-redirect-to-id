@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, url_for
 from uuid import uuid1
 
 app = Flask(__name__)
@@ -14,7 +14,7 @@ def index():
 def vote():
     print("\n\nSe petrec chestii\n\n")
     id = request.values.get("id")
-    return redirect(f"/#{id}")
+    return redirect(url_for("index", _anchor=id))
 
 
 ### this is the new bit
