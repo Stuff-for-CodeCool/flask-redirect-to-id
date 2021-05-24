@@ -1,8 +1,6 @@
 from flask import Flask, render_template, request, redirect
 from uuid import uuid1
 
-from flask.templating import render_template_string
-
 app = Flask(__name__)
 ids = [str(uuid1()).split("-")[0] for x in range(10)]
 
